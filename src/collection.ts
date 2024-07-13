@@ -1,12 +1,10 @@
-import { CreateCollectionRequest, Pinecone } from "@pinecone-database/pinecone";
-import { Init, Service } from "../../njses";
+import { Pinecone } from "@pinecone-database/pinecone";
 
 /*
 reference:
 https://docs.pinecone.io/guides/indexes/understanding-collections
 */
 
-@Service({ name: "$$pinecone_collection" })
 export class PCCollection {
     readonly name: string;
 

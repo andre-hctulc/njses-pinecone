@@ -8,12 +8,10 @@ import {
     ScoredPineconeRecord,
     UpdateOptions,
 } from "@pinecone-database/pinecone";
-import { Service } from "../../njses";
 import { ListOptions } from "@pinecone-database/pinecone/dist/data";
 
 export type GetManyRecordsResult<M extends RecordMetadata> = Record<string, PineconeRecord<M>>;
 
-@Service({ name: "$$pinecone_namespace" })
 export class PCNamesspace<M extends RecordMetadata = RecordMetadata> {
     private _index: Index;
 

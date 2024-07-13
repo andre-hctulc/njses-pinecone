@@ -5,7 +5,7 @@ import {
     Pinecone,
     RecordMetadata,
 } from "@pinecone-database/pinecone";
-import { Service, ServiceRegistery } from "../../njses";
+import { ServiceRegistery } from "../../njses";
 import { PCNamesspace } from "./namespace";
 
 export type PCIndexOptions = {
@@ -13,7 +13,6 @@ export type PCIndexOptions = {
     additionalHeaders?: Record<string, string>;
 };
 
-@Service({ name: "$$pinecone_index" })
 export class PCIndex {
     readonly name: string;
     readonly pcIndex: Index<RecordMetadata>;
