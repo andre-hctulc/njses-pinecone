@@ -5,7 +5,7 @@ import {
     Pinecone,
     RecordMetadata,
 } from "@pinecone-database/pinecone";
-import { ServiceRegistery } from "../../njses";
+import { Service, ServiceRegistery } from "../../njses";
 import { PCNamesspace } from "./namespace";
 
 export type PCIndexOptions = {
@@ -13,6 +13,7 @@ export type PCIndexOptions = {
     additionalHeaders?: Record<string, string>;
 };
 
+@Service({ name: "$$pinecone_index" })
 export class PCIndex {
     readonly name: string;
     readonly pcIndex: Index<RecordMetadata>;
@@ -30,10 +31,13 @@ export class PCIndex {
         return this.client.describeIndex(this.name);
     }
 
+    /**
+     * Mounts the given namespace
+     */
     getNamespace<M extends RecordMetadata = RecordMetadata>(
         namespace: string | null
     ): Promise<PCNamesspace<M>> {
-        return ServiceRegistery.create(PCNamesspace, this.client, this.pcIndex, namespace) as Promise<
+        return ServiceRegistery.mount(PCNamesspace, this.client, this.pcIndex, namespace) as Promise<
             PCNamesspace<M>
         >;
     }
