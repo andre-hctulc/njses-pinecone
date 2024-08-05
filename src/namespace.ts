@@ -37,6 +37,7 @@ export class PCNamesspace<M extends RecordMetadata = RecordMetadata> {
         return this._index.deleteOne(id);
     }
 
+    /** Deletes the namesspace effectivly */
     clear(): Promise<void> {
         return this._index.deleteAll();
     }
