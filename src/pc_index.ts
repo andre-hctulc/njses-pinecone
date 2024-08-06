@@ -5,7 +5,7 @@ import {
     Pinecone,
     RecordMetadata,
 } from "@pinecone-database/pinecone";
-import { Service, Services } from "../../njses";
+import { App, Service } from "../../njses";
 import { PCNamesspace } from "./namespace";
 
 export type PCIndexOptions = {
@@ -32,12 +32,12 @@ export class PCIndex {
     }
 
     /**
-     * Creates and returns a **dynamic** namespace.
+     * Creates and returns a namespace entity.
      */
     getNamespace<M extends RecordMetadata = RecordMetadata>(
         namespace: string | null
     ): Promise<PCNamesspace<M>> {
-        return Services.create(PCNamesspace<M>, this.client, this.pcIndex, namespace);
+        return App.createEntity(PCNamesspace<M>, this.client, this.pcIndex, namespace);
     }
 
     update(options: ConfigureIndexRequestSpecPod): Promise<IndexModel> {

@@ -1,14 +1,14 @@
 {
-  "name": "@andre-hctulc/njses-pinecone",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "postpack": "tsc --noEmit"
-  },
-  "author": "André Thomas",
-  "license": "ISC",
-  "dependencies": {
-    "@pinecone-database/pinecone": "^2.2.2"
-  }
+    "name": "@andre-hctulc/njses-pinecone",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "tc": "tsc --noEmit"
+    },
+    "author": "André Thomas",
+    "license": "ISC",
+    "dependencies": {
+        "@pinecone-database/pinecone": "^2.2.2"
+    }
 }

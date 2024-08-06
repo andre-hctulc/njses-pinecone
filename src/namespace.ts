@@ -9,7 +9,7 @@ import {
     UpdateOptions,
 } from "@pinecone-database/pinecone";
 import { ListOptions } from "@pinecone-database/pinecone/dist/data";
-import { Service } from "../../njses/src/decorators";
+import { Service } from "../../njses";
 
 export type GetManyRecordsResult<M extends RecordMetadata> = Record<string, PineconeRecord<M>>;
 

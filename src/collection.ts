@@ -1,5 +1,5 @@
 import { Pinecone } from "@pinecone-database/pinecone";
-import { Service } from "../../njses/src/decorators";
+import { Service } from "../../njses";
 
 /*
 reference:
